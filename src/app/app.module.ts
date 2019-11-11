@@ -5,7 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ListComponent } from './list/list.component';
+import { RouterModule, Routes } from '@angular/router';
 
+const routes: Routes = [
+  {path: '', component: HomeComponent},
+  {path: 'list', component: ListComponent}
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +19,8 @@ import { ListComponent } from './list/list.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
